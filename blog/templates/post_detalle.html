@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Detalle de {{post.title}}</title>
 </head>
 <body>
-    
-    <h1>Este es el ABOUT</h1>
 
-    <br>
-    <br>
-    <br>
 
-    <h3>Sape lokita</h3>
+   
+    <p>Post: <i>{{ post.title }}</i></p>
+    <p>Autor: <i>{{ post.author }}</i></p>
+    <p>
+        <a href="{% url 'List' %}">Regresar</a>
+    </p>
+
     
 </body>
 </html>

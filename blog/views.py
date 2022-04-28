@@ -6,6 +6,11 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+
+def about(request):
+    return render(request, "about.html")
+
+
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_at')
     template_name = 'index.html'
@@ -15,38 +20,29 @@ class PostDetail(generic.DetailView):
     model = Post
     template_name = 'post.html'
 
-def about(request):
-    return render(request, "about.html")
 
-class CursoList(LoginRequiredMixin, ListView):
-
+class PostLista(LoginRequiredMixin, ListView):
       model = Post 
-      template_name = "AppCoder/cursos_list.html"
+      template_name = "post_list.html"
 
 
-
-class CursoDetalle(DetailView):
-
+class PostDetalle(DetailView):
       model = Post
-      template_name = "AppCoder/curso_detalle.html"
+      template_name = "post_detalle.html"
 
 
-
-class CursoCreacion(CreateView):
-
+class PostCreacion(CreateView):
       model = Post
-      success_url = "/AppCoder/curso/list"
-      fields = ['nombre', 'camada']
+      success_url = "post/list"
+      fields = ['title', 'authon', 'content', 'published', 'slug', 'status']
 
 
-class CursoUpdate(UpdateView):
-
+class PostUpdate(UpdateView):
       model = Post
-      success_url = "/AppCoder/curso/list"
-      fields  = ['nombre', 'camada']
+      success_url = "post/list"
+      fields = ['title', 'authon', 'content', 'published', 'slug', 'status']
 
 
-class CursoDelete(DeleteView):
-
+class PostDelete(DeleteView):
       model = Post
-      success_url = "/AppCoder/curso/list"
+      success_url = "post/list"
