@@ -1,0 +1,48 @@
+{% block sidebar %}
+
+<style>
+        .card{
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
+       
+</style>
+
+<!-- Sidebar Widgets Column -->
+<div class="col-md-4 float-right ">
+<div class="card my-4">
+
+    <div class="card-header">
+        {% if not request.user.is_authenticated %}
+        <h3 class="text-muted small mb-4 mb-lg-0"><h3> Bienvenido </h3>
+        {% endif %}
+
+        {% if request.user.is_authenticated %}
+        <h3 class="text-muted small mb-4 mb-lg-0"><h3>Hola {{user.username}}</h3>
+        {% endif %}
+    </div>
+
+    <div class="card-body">  
+        {% if not request.user.is_authenticated %}
+        <h5> Inicia sesion o registrate </h5>
+        {% endif %}
+
+         {% if request.user.is_authenticated %}
+         <p class="card-text"><img src="{{url}}" style="height: 90px; width: 95px;" ></p> 
+        {% endif %}
+    </div>
+<br>
+<br>
+        
+    <div class="btn">
+        {% if not request.user.is_authenticated %}
+        <button><a href="{% url 'login' %}">Login</a></button>
+        {% endif %}
+
+        {% if request.user.is_authenticated %}
+        <button><a href="{% url 'logout' %}">Logout</a></button>
+        {% endif %}
+     </div>
+</div>
+</div>
+
+{% endblock sidebar %}

@@ -1,0 +1,10 @@
+{% extends "index.html" %} 
+{% block registro %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Registrar</button>
+    </form>
+    
+{% endblock registro %}

@@ -1,0 +1,20 @@
+{% extends "index.html" %} 
+{% block edit %}
+<title>Editar</title>
+</head>
+<body>
+    <div>
+        <h2>Editar Perfil</h2> <h2> de {{user.username}}</h2>
+    </div>
+    <div>
+        <form action="" method="POST"> {% csrf_token %}
+            
+            <table>
+                {{miFormulario.as_table}}    
+            </table>
+
+            <input type="submit", value="Enviar">
+        </form>
+    </div>
+</body>
+{% endblock edit %}
