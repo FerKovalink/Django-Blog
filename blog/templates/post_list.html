@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Post</title>
+    <title>Blog</title>
 </head>
 <body>
 
@@ -13,7 +13,7 @@
         {% for post in object_list %}
 
             <li>
-                <p>NOMBRE: {{ post.title }} </p>
+                <p>Titulo: {{ post.title }} </p>
                 <p> 
                     <a href="{% url 'Detail' post.id %}">Ver</a> | 
                     <a href="{% url 'Edit' post.id %}">Editar</a> | 
@@ -25,7 +25,7 @@
         {% endfor %}
     </ul>
 
-    <a href="{% url 'New'  %}">Nuevo</a> | 
+    <a href="{% url 'New'  %}">Nuevo Post</a> | 
 
 
 </body>

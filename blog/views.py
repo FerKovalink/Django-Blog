@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def about(request):
-    return render(request, "about.html")
+    return render(request, 'about.html')
 
 
 class PostList(generic.ListView):
@@ -23,26 +23,26 @@ class PostDetail(generic.DetailView):
 
 class PostLista(LoginRequiredMixin, ListView):
       model = Post 
-      template_name = "post_list.html"
+      template_name = 'post_list.html'
 
 
 class PostDetalle(DetailView):
       model = Post
-      template_name = "post_detalle.html"
+      template_name = 'post_detalle.html'
 
 
 class PostCreacion(CreateView):
       model = Post
-      success_url = "post/list"
-      fields = ['title', 'authon', 'content', 'published', 'slug', 'status']
+      success_url = 'post_create.html'
+      fields = ['title', 'author', 'content', 'published', 'slug', 'status']
 
 
 class PostUpdate(UpdateView):
       model = Post
-      success_url = "post/list"
-      fields = ['title', 'authon', 'content', 'published', 'slug', 'status']
+      success_url = 'post_edit.html'
+      fields = ['title', 'author', 'content', 'published', 'slug', 'status']
 
 
 class PostDelete(DeleteView):
       model = Post
-      success_url = "post/list"
+      success_url = 'post_confirm_delete.html'

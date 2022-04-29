@@ -28,6 +28,7 @@
 
          {% if request.user.is_authenticated %}
          <p class="card-text"><img src="{{url}}" style="height: 90px; width: 95px;" ></p> 
+         <a href="{% url 'New'  %}">Nuevo Post</a>
         {% endif %}
     </div>
 <br>
@@ -35,11 +36,11 @@
         
     <div class="btn">
         {% if not request.user.is_authenticated %}
-        <button><a href="{% url 'login' %}">Login</a></button>
+        <a href="{% url 'login' %}">Login</a>
         {% endif %}
 
         {% if request.user.is_authenticated %}
-        <button><a href="{% url 'logout' %}">Logout</a></button>
+        <a href="{% url 'logout' %}">Logout</a>
         {% endif %}
      </div>
 </div>
