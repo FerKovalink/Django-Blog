@@ -34,6 +34,13 @@
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
+            {% block editar %} {% endblock editar %}
+            {% block create %} {% endblock create %}
+            {% block delete %} {% endblock delete %}
+            {% block edit %} {% endblock edit %}
+            {% block login %} {% endblock login %}
+            {% block registro %} {% endblock registro %}
+            
             {% for post in post_list %}
             <div class="card mb-4">
                 <div class="card-body">
@@ -45,8 +52,8 @@
             </div>
             {% endfor %}
         </div>
-            {% block login %} {% block registro %} {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %} {% endblock registro %} {% endblock login %} 
-            {% block edit %} {% endblock edit %}
+             {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+            
 `    </div>
 </div>
 {% endblock content %}

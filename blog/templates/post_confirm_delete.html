@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Borrar Post</title>
-</head>
+{% extends 'index.html' %} 
+{% block delete %}
 <body>
-
-
     <form method="post">{% csrf_token %}
-        ¿Estás seguro que deseas borrar el post "{{ object }}"?
-        <input type="submit" value="Submit" />
+        <a>¿Estás seguro que deseas borrar el post: "{{ object }}"?</a> 
+        <a><input type="submit" value="Borrar" /></a>
     </form>
-
-    
 </body>
-</html>
+{% endblock delete %}

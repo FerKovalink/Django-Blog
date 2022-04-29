@@ -2,7 +2,7 @@
 
 <style>
         .card{
-            box-shadow: 0 16px 48px #E3E7EB;
+            box-shadow: 0 16px 48px #cfd1d2;
         }
        
 </style>
@@ -13,7 +13,7 @@
 
     <div class="card-header">
         {% if not request.user.is_authenticated %}
-        <h3 class="text-muted small mb-4 mb-lg-0"><h3> Bienvenido </h3>
+        <h3 class="text-muted small mb-4 mb-lg-0"><h3>Bienvenido</h3>
         {% endif %}
 
         {% if request.user.is_authenticated %}
