@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate
-from login.forms import UserRegisterForm, UserEditForm
-
+from login.forms import UserRegisterForm, UserEditForm, AvatarForm
+from login.models import Avatar
 
 def login_request(request):
 
@@ -28,6 +28,7 @@ def login_request(request):
 
 
 def register(request):
+
       
       if request.method == "POST":
             form = UserRegisterForm(request.POST)
@@ -35,12 +36,26 @@ def register(request):
             if form.is_valid():
                   username = form.cleaned_data['username']                 
                   form.save()
-                  return render(request, "base.html", {"mensaje": "usuario creado"})
+                  return render(request, "base.html")
       else: 
             form = UserRegisterForm()
 
       return render(request, "registro.html", {"form": form})
+      
+      
 
+'''def showimage(request):
+
+    lastimage= Avatar.objects.last()
+    imagefile= lastimage.imagefile
+    form= AvatarForm(request.POST or None, request.FILES or None)
+
+    if form.is_valid():
+        form.save()
+
+    context= {'imagen': imagefile, 'form': form}
+    
+    return render(request, 'base.html', context) '''
 
 
 
@@ -62,4 +77,6 @@ def editarPerfil(request):
             miFormulario = UserEditForm(initial={'email':usuario.email})
 
       return render(request, "editarPerfil.html", {"miFormulario": miFormulario, "usuario": usuario})
+
+
 

@@ -27,7 +27,7 @@
         {% endif %}
 
          {% if request.user.is_authenticated %}
-         <p class="card-text"><img src="{{url}}" style="height: 90px; width: 95px;" ></p> 
+         <p class="card-text"><img src="{{MEDIA_URL}}" style="height: 90px; width: 95px;" ></p> 
          <a href="{% url 'New'  %}">Nuevo Post</a>
         {% endif %}
     </div>

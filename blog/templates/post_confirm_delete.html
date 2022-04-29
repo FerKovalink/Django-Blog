@@ -2,6 +2,7 @@
 {% block delete %}
 <body>
     <form method="post">{% csrf_token %}
+        <br>
         <a>¿Estás seguro que deseas borrar el post: "{{ object }}"?</a> 
         <a><input type="submit" value="Borrar" /></a>
     </form>

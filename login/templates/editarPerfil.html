@@ -1,11 +1,10 @@
 {% extends "index.html" %} 
 {% block edit %}
-<title>Editar</title>
-</head>
 <body>
     <div>
-        <h2>Editar Perfil</h2> <h2> de {{user.username}}</h2>
+        <h2>Editar Perfil de {{user.username}}</h2>
     </div>
+    <br>
     <div>
         <form action="" method="POST"> {% csrf_token %}
             

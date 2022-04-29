@@ -1,5 +1,6 @@
 {% extends "index.html" %} 
 {% block login %}
+
     <form action="" method="POST">
         {%csrf_token%}
         {{form.as_p}}
