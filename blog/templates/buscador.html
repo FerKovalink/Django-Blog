@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador</title>
+</head>
+<body>
+    
+    <h3>Buscador:</h3>
+
+    <form action="buscador/" method="GET">
+
+        <input type="text" name="Titulo" id="title">
+
+        <input type="submit" value="Buscar">
+
+    </form>
+
+    {% if post %}
+
+    <p>Estamos buscando el: {{title}}</p>
+
+    <ul>
+	{% for post in posts %}
+		<li> {{post.title}} </li>
+	{% endfor %}
+
+    </ul>
+
+    {% endif %}
+
+</body>
+</html>

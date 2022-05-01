@@ -21,11 +21,6 @@ class PostDetail(DetailView):
     template_name = 'post.html'
 
 
-class PostDetalle(DetailView):
-      model = Post
-      template_name = 'post.html'
-
-
 class PostCreacion(CreateView):
       model = Post
       success_url = 'post_create.html'
@@ -43,7 +38,7 @@ class PostDelete(DeleteView):
       success_url = 'post_confirm_delete.html'
 
 
-def buscar(request):
+def buscador(request):
       if  request.GET['title']:
             title = request.GET['title'] 
             post = Post.objects.filter(title__icontains=title)
@@ -51,3 +46,4 @@ def buscar(request):
 
       else: 
             return HttpResponse('No se encuentra {title}')
+

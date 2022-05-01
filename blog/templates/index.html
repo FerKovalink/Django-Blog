@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+{% extends 'base.html' %} 
 {% block content %}
 <style>
     body {
@@ -23,7 +23,6 @@
             <div class=" col-md-8 col-md-10 mx-auto">
                 <div class="site-heading">
                     <h3 class=" site-heading my-4 mt-3 text-white">Bienvenido al Blog</h3>
-                    </p>
                 </div>
             </div>
         </div>
@@ -40,6 +39,7 @@
             {% block edit %} {% endblock edit %}
             {% block login %} {% endblock login %}
             {% block registro %} {% endblock registro %}
+            {% block about %} {% endblock about %}
             
             {% for post in post_list %}
             <div class="card mb-4">
@@ -51,7 +51,7 @@
                 </div>
             </div>
             {% endfor %}
-            
+
         </div>
              {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
             

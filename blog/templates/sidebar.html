@@ -1,5 +1,4 @@
 {% block sidebar %}
-
 <style>
         .card{
             box-shadow: 0 16px 48px #cfd1d2;
@@ -27,13 +26,12 @@
         {% endif %}
 
          {% if request.user.is_authenticated %}
-         <p class="card-text"><img src="{{MEDIA_URL}}" style="height: 90px; width: 95px;" ></p> 
+         <p class="card-text"><img src="/media/media/1.png" style="height: 90px; width: 95px;" ></p> 
          <a href="{% url 'New'  %}">Nuevo Post</a>
         {% endif %}
     </div>
 <br>
 <br>
-        
     <div class="btn">
         {% if not request.user.is_authenticated %}
         <a href="{% url 'login' %}">Login</a>
@@ -45,5 +43,4 @@
      </div>
 </div>
 </div>
-
 {% endblock sidebar %}
