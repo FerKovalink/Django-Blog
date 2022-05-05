@@ -33,13 +33,10 @@
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
-            {% block editar %} {% endblock editar %}
-            {% block create %} {% endblock create %}
-            {% block delete %} {% endblock delete %}
+            {% block post %} {% endblock post %}
             {% block edit %} {% endblock edit %}
             {% block login %} {% endblock login %}
             {% block registro %} {% endblock registro %}
-            {% block about %} {% endblock about %}
             
             {% for post in post_list %}
             <div class="card mb-4">

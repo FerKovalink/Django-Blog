@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate
-from login.forms import UserRegisterForm, UserEditForm, AvatarForm
-from login.models import Avatar
+from login.forms import UserRegisterForm, UserEditForm
+
 
 def login_request(request):
 
@@ -64,7 +64,6 @@ def editarPerfil(request):
       
       if request.method == 'POST':
             miFormulario = UserEditForm(request.POST)
-            print(miFormulario.fields)
             if miFormulario.is_valid:
                   informacion = miFormulario.fields
                   usuario.email = informacion['email']
